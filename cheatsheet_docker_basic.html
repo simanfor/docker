@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Docker Cheat Sheet - Ubuntu & Windows</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #333333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        header {
+            border-bottom: 3px solid #2496ed;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #1d2731;
+            font-size: 24pt;
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 12pt;
+            margin: 0;
+        }
+        .section-card {
+            display: block;
+            background: #fafafa;
+            border-left: 4px solid #2496ed;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 6px 6px 0;
+        }
+        h2 {
+            color: #2496ed;
+            font-size: 14pt;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            vertical-align: top;
+            border-bottom: 1px solid #eef2f5;
+        }
+        th {
+            background-color: #ededed;
+            color: #333;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        tr:nth-child(even) td {
+            background-color: #fdfdfd;
+        }
+        .cmd-block {
+            display: block;
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 9.5pt;
+            margin: 5px 0;
+            white-space: pre-wrap;
+        }
+        .cmd-block code {
+            background: none;
+            color: #f8f8f2;
+            padding: 0;
+            display: block;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            font-size: 8pt;
+            font-weight: bold;
+            border-radius: 3px;
+            color: #fff;
+            margin-right: 5px;
+        }
+        .badge-ubuntu { background-color: #E95420; }
+        .badge-windows { background-color: #0078D4; }
+        .badge-both { background-color: #555555; }
+        
+        .note {
+            background-color: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 10pt;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Docker Cheat Sheet</h1>
+        <p class="subtitle">Guía rápida de comandos esenciales para Ubuntu (Linux) y Windows (PowerShell/CMD)</p>
+    </header>
+
+    <div class="section-card">
+        <h2>1. Gestión de Contenedores (Ciclo de Vida)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 35%;">Comando</th>
+                    <th style="width: 45%;">Descripción</th>
+                    <th style="width: 20%;">SO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="cmd-block"><code>docker ps</code></div></td>
+                    <td>Listar contenedores activos.</td>
+                    <td><span class="badge badge-both">Ambos</span></td>
+                </tr>
+                <tr>
+                    <td><div class="cmd-block"><code>docker ps -a</code></div></td>
+                    <td>Listar todos los contenedores (activos e inactivos).</td>
+                    <td><span class="badge badge-both">Ambos</span></td>
+                </tr>
+                <tr>
+                    <td><div class="cmd-block"><code>docker run -d --name mi_contenedor nombre_imagen</code></div></td>
+                    <td>Crear y arrancar un contenedor en segundo plano (detached).</td>
+                    <td><span class="badge badge-both">Ambos</span></td>
+                </tr>
+                <tr>
+                    <td><div class="cmd-block"><code>docker start mi_contenedor</code></div></td>
+                    <td>Iniciar un contenedor detenido.</td>
+                    <td><span class="badge badge

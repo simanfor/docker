@@ -1,0 +1,32 @@
+{
+  "user": "Aitor Vázquez Veloso",
+  "name": "",
+  "overwrite_output_file": "YES",
+  "output_path": "../tests/outputs/masas_puras_Espana__",
+  "decimal_numbers": 2,
+  "zip_compression": "NO",
+  "operations": [
+    {
+      "name": "Inicio",
+      "description": "Carga de datos",
+      "model_path": "models.load.xlsx_load",
+      "model_class": "XLSXLoad",
+      "operation": "LOAD",
+      "variables": {
+        "init": 0,
+        "time": 0,
+        "input": "../inputs/masas_puras_Espana-plantilla.xlsx"
+      }
+    },
+    {"name": "Inicialización", "description": "Inicialización", "model_path": "models.trees.pure_models_Spain", "model_class": "PureModelsSpain", "operation": "INIT", "variables": { "time": 0}},
+    {"name": "Simulación", "description": "Proyección", "model_path": "models.trees.pure_models_Spain", "model_class": "PureModelsSpain", "operation": "EXECUTION", "variables": { "time": 5}},
+    {"name": "Simulación", "description": "Proyección", "model_path": "models.trees.pure_models_Spain", "model_class": "PureModelsSpain", "operation": "EXECUTION", "variables": { "time": 3}},
+
+    {"name": "Corta", "description": "Corta",
+      "model_path": "models.harvest.thinning_systematic", "model_class": "ThinningSystematic", "operation": "HARVEST",
+      "variables": {
+        "time": 0, "thinning": "DENSITY", "volumen": 25
+      }
+    }
+  ]
+}
