@@ -41,7 +41,7 @@ Si no estás familiarizado con Docker, te recomendamos abrir el archivo interact
 
 ## 📥 Obtener la Imagen del Simulador
 
-La imagen oficial del simulador de SIMANFOR se encuentra alojada públicamente en el registro de contenedores de GitHub (GitHub Container Registry). Puedes consultar el listado completo de imágenes y versiones disponibles en el enlace público de **[🔗 Paquetes de SIMANFOR-Dask](https://github.com/orgs/simanfor-dask/packages)**, siendo la imagen completa por defecto la que indicamos en el siguiente ejemplo de descarga:
+La imagen oficial del simulador de SIMANFOR se encuentra alojada públicamente en el registro de contenedores de GitHub (GitHub Container Registry). Puedes consultar el listado completo de imágenes y versiones disponibles en el enlace público de **[🔗 Paquetes de SIMANFOR-Dask](https://github.com/orgs/simanfor-dask/packages/container/package/simulator)**, siendo la imagen completa por defecto la que indicamos en el siguiente ejemplo de descarga:
 
 ```bash
 docker pull ghcr.io/simanfor-dask/simulator:latest
